@@ -1,0 +1,70 @@
+---
+import Layout from "../layouts/Layout.astro"
+
+const webs =  [
+   {id:1 , title: "Weather App", description: "Check out the weather" ,tech:["React, Tailwind"],  img:"./weather.png", github:"https://github.com/MarFandino84/Weather-App", weblink:"https://weather-app-ten-beryl-30.vercel.app/" },
+   {id:2 , title: "Countries Dic", description: "REST API with color theme switcher  " ,tech:["React, Router, Styled-Components"], img:"./countriesAPi.webp", github:"https://github.com/MarFandino84/Countries-API", weblink:"https://countries-api-theta-swart.vercel.app/" },
+   {id:3 , title: "Bikes E-commerce", description: "E-Commerce " ,tech:["React, Router, Redux, Styled-Components"], img:"./igni.png", github:"https://github.com/MarFandino84/Ignigo-Bikes", weblink:"https://ignigo-bikes-8eln-ca16wcrln-marfandino.vercel.app/" },
+   {id:4 , title: "Advice generator", description: "Dont leave without your advice" ,tech:["React, Styled-components"], img:"./advice.webp", github:"https://github.com/MarFandino84/Advice-Generator", weblink:"https://advice-generator-marfandino.vercel.app/" },
+
+];
+
+
+---
+
+<Layout title="projects">
+     
+    {webs.map(pro => {
+         
+      return <section id="projects" class="flex md:flex-row px-24 gap-3 mt-10">
+                    <a target="blank" href={pro.weblink}><img  class="web-selfie" src={pro.img} alt={pro.description} /></a>
+         <div class="flex flex-col ">
+             <h3 class="text-3xl " >{pro.title}</h3>
+               <div class="flex flex-row my-3 ">
+                <span class="bg-blue-600 rounded-lg">{pro.tech}</span>
+               
+               </div>
+             
+             <p class="m-2">{pro.description}</p>
+             <div class="flex gap-4">
+               <div class="bg-slate-500 rounded size-auto hover:bg-orange-500"><a  target="blank"  href={pro.github}><img class="size-8" src="./brand-github.png" alt="Github Link" /></a></div>    
+               <div class="bg-slate-500 rounded size-auto  hover:bg-orange-500"> <a target="blank" href={pro.weblink}><img class="size-8" src="./monitor.png" alt="Web link" /></a></div>    
+         
+            </div> 
+  
+
+     </div>
+   </section>
+    })}
+    
+  </Layout>    
+
+  <style>
+.web-selfie {
+   width: 16em;
+   height: 10em;
+   border-radius: 12px;
+   border: 2px solid white; 
+   @media (max-width: 899px) {
+   width: 20em;
+   height: 10em;
+      
+   }
+  }
+#projects {
+@media (max-width: 899px) {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+body {
+   padding: 0 10px;
+}
+    
+}
+}
+
+
+  </style>
+
+
+

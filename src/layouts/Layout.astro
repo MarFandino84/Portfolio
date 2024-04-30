@@ -1,0 +1,67 @@
+---
+import '@fontsource-variable/roboto-slab';
+import Header from "../pages/components/Header.astro"
+import Footer from "../pages/components/Footer.astro"
+import Projects from '../pages/Projects.astro';
+import { ViewTransitions } from "astro:transitions"
+
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/code-dots.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<ViewTransitions />
+	</head>
+	<body class="px-24 ">
+
+	 <Header />
+	 
+	 <main >
+		<slot />
+	 </main>
+	 <Footer />
+	
+	</body>
+
+	</html>
+	
+
+<style is:global>
+	:root {
+		color-scheme: dark;
+		scroll-behavior: smooth;
+	}
+	body {
+		font-family: 'Roboto Slab Variable', serif;
+		background-size: 224px;
+		color: whitesmoke;
+		background-color: rgb(13, 4, 44);
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		@media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+		header-nav {
+        animation: blur linear both 0.5s;
+        animation-timeline: scroll();
+        animation-range: 0 500px;
+      }
+	}
+	}
+</style>

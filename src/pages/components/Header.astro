@@ -1,0 +1,42 @@
+
+
+	
+<header class="flex flex-row justify-between items-center px-36  m-2   w-[50vw]">
+  <img class=" object-cover aspect-video rounded-full  " src="./profile.jpg" alt="profile pic"/>
+<nav class=" ">
+    <ul class="no-underline flex gap-6">
+       <a class="hover:text-orange-500" href="/">Home</a>
+       <a class="hover:text-orange-500" href="/Projects">Projects</a>
+       <a class="hover:text-orange-500" href="mailto:Mano84@hotmail.com.ar">Contact</a>
+
+    </ul>
+</nav>
+
+</header>
+
+
+
+<style>
+  nav {
+    animation: nav-shadown 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+  }
+
+  @keyframes nav-shadown {
+    to {
+      @apply shadow-lg ring-1 backdrop-blur dark:bg-gray-800/90 bg-white/50 ring-white/10;
+    }
+  }
+  header img {
+     height: 5em;
+     width: 5em;
+  }
+  header {
+@media (max-width:850px) {
+   padding: 0 10px;
+   flex-direction: column;
+   
+}
+  }
+</style>
